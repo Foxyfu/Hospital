@@ -82,29 +82,6 @@
     <Compile Include="Forms\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="hospitalDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hospitalDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="hospitalDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hospitalDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="hospitalDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hospitalDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="hospitalDataSet3.cs">
-      <DependentUpon>hospitalDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="hospitalDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hospitalDataSet3.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Forms\PatientCheckOut.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,50 +163,6 @@
     <EmbeddedResource Include="Forms\ViewwPatientCheckOut.resx">
       <DependentUpon>ViewwPatientCheckOut.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="hospitalDataSet.xsc">
-      <DependentUpon>hospitalDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="hospitalDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>hospitalDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="hospitalDataSet.xss">
-      <DependentUpon>hospitalDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="hospitalDataSet1.xsc">
-      <DependentUpon>hospitalDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="hospitalDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>hospitalDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="hospitalDataSet1.xss">
-      <DependentUpon>hospitalDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="hospitalDataSet2.xsc">
-      <DependentUpon>hospitalDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="hospitalDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>hospitalDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="hospitalDataSet2.xss">
-      <DependentUpon>hospitalDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="hospitalDataSet3.xsc">
-      <DependentUpon>hospitalDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="hospitalDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>hospitalDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="hospitalDataSet3.xss">
-      <DependentUpon>hospitalDataSet3.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -247,13 +180,6 @@
     <None Include="Resources\kashipara.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="hospital.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="hospital_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>hospital.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\chob.png" />
     <None Include="Resources\images %28staff%29.png" />
     <None Include="Resources\08-512.png" />
