@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace HospitalManagementSystemCSharp
 {
     public partial class StaffInformation : Form
     {
+        Database database = new Database();
         public StaffInformation()
         {
             InitializeComponent();
@@ -21,23 +22,22 @@ namespace HospitalManagementSystemCSharp
         private void StaffInformation_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'hospitalDataSet.staff' table. You can move, or remove it, as needed.
-            this.staffTableAdapter.Fill(this.hospitalDataSet.staff);
-            using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\bin\Debug\hospital.mdf;Integrated Security=True"))
+            //this.staffTableAdapter.Fill(this.hospitalDataSet.staff);
+            using (MySqlConnection con1 = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;"))
             {
-
                 string str2 = "SELECT * FROM staff";
-                SqlCommand cmd2 = new SqlCommand(str2, con1);
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                MySqlCommand cmd2 = new MySqlCommand(str2, con1);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = new BindingSource(dt, null);
             }
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\bin\Debug\hospital.mdf;Integrated Security=True");
-            con.Open();
-            string str1 = "select max(id) from staff;";
 
-            SqlCommand cmd1 = new SqlCommand(str1, con);
-            SqlDataReader dr = cmd1.ExecuteReader();
+            MySqlConnection con = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;");
+            con.Open();
+            string str1 = "SELECT max(id) FROM staff;";
+            MySqlCommand cmd1 = new MySqlCommand(str1, con);
+            MySqlDataReader dr = cmd1.ExecuteReader();
             if (dr.Read())
             {
                 string val = dr[0].ToString();
@@ -58,8 +58,7 @@ namespace HospitalManagementSystemCSharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Sem.4\C# Projects\Trials\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True");
-            con.Open();
+            database.openConnection();
             string gen = string.Empty;
             if (radioButton1.Checked)
             {
@@ -71,54 +70,52 @@ namespace HospitalManagementSystemCSharp
             }
             try
             {
-                string str = "INSERT INTO staff(name,gender,position,salary,contact,address) VALUES('" + textBox2.Text + "','" + gen + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "'); ";
+                string str = "INSERT INTO staff(name,gender,position,salary,contact,address) VALUES('" + textBox2.Text + "','" + gen + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
 
-                SqlCommand cmd = new SqlCommand(str, con);
+                MySqlCommand cmd = new MySqlCommand(str, database.getConnection());
                 cmd.ExecuteNonQuery();
-                string str1 = "select max(Id) from staff;";
 
-                SqlCommand cmd1 = new SqlCommand(str1, con);
-                SqlDataReader dr = cmd1.ExecuteReader();
+                string str1 = "SELECT max(id) FROM staff;";
+                MySqlCommand cmd1 = new MySqlCommand(str1, database.getConnection());
+                MySqlDataReader dr = cmd1.ExecuteReader();
                 if (dr.Read())
                 {
-                    MessageBox.Show("Staff Information Saved Successfully..");
-                    textBox2.Text = "";                  
+                    MessageBox.Show("Staff Information Saved Successfully.");
+                    textBox2.Text = "";
                     textBox4.Text = "";
                     textBox5.Text = "";
                     textBox6.Text = "";
                     textBox7.Text = "";
-                    using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Sem.4\C# Projects\Trials\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True"))
-                    {
 
+                    using (MySqlConnection con1 = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;"))
+                    {
                         string str2 = "SELECT * FROM staff";
-                        SqlCommand cmd2 = new SqlCommand(str2, con1);
-                        SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                        MySqlCommand cmd2 = new MySqlCommand(str2, con1);
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
                         dataGridView1.DataSource = new BindingSource(dt, null);
                     }
                 }
             }
-            catch (SqlException excep)
+            catch (MySqlException excep)
             {
                 MessageBox.Show(excep.Message);
             }
-            con.Close();
+            database.closeConnection();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Sem.4\C# Projects\Trials\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True");
-
-            con.Open();
+            database.openConnection();
             if (textBox1.Text != "")
             {
                 try
                 {
-                    string getCust = "select name,gender,position,salary,contact,address from staff where id=" + Convert.ToInt32(textBox1.Text) + " ;";
+                    string getCust = "SELECT name,gender,position,salary,contact,address FROM staff WHERE id=" + Convert.ToInt32(textBox1.Text) + "";
 
-                    SqlCommand cmd = new SqlCommand(getCust, con);
-                    SqlDataReader dr;
+                    MySqlCommand cmd = new MySqlCommand(getCust, database.getConnection());
+                    MySqlDataReader dr;
                     dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
@@ -131,30 +128,28 @@ namespace HospitalManagementSystemCSharp
                         {
                             radioButton2.Checked = true;
                         }
-                       
                         textBox4.Text = dr.GetValue(2).ToString();
                         textBox5.Text = dr.GetValue(3).ToString();
                         textBox6.Text = dr.GetValue(4).ToString();
                         textBox7.Text = dr.GetValue(5).ToString();
-                       
                     }
                     else
                     {
-                        MessageBox.Show(" Sorry, This ID, " + textBox1.Text + " Staff is not Available.   ");
+                        MessageBox.Show("Sorry, Staff with ID " + textBox1.Text + " is not available.");
                         textBox1.Text = "";
                     }
                 }
-                catch (SqlException excep)
+                catch (MySqlException excep)
                 {
                     MessageBox.Show(excep.Message);
                 }
-                con.Close();
+                database.closeConnection();
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Sem.4\C# Projects\Trials\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True");
+            MySqlConnection con = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;");
             con.Open();
             string gen = string.Empty;
             if (radioButton1.Checked)
@@ -167,36 +162,35 @@ namespace HospitalManagementSystemCSharp
             }
             try
             {
-                string str = " Update staff set name='" + textBox2.Text + "',gender='" + gen + "',position='" + textBox4.Text + "',salary='" + textBox5.Text + "',contact='" + textBox6.Text + "',address='" + textBox7.Text + "' where id='" + textBox1.Text + "'";
+                string str = "UPDATE staff SET name='" + textBox2.Text + "',gender='" + gen + "',position='" + textBox4.Text + "',salary='" + textBox5.Text + "',contact='" + textBox6.Text + "',address='" + textBox7.Text + "' WHERE id='" + textBox1.Text + "'";
 
-                SqlCommand cmd = new SqlCommand(str, con);
+                MySqlCommand cmd = new MySqlCommand(str, con);
                 cmd.ExecuteNonQuery();
 
-                string str1 = "select max(id) from staff;";
-
-                SqlCommand cmd1 = new SqlCommand(str1, con);
-                SqlDataReader dr = cmd1.ExecuteReader();
+                string str1 = "SELECT max(id) FROM staff;";
+                MySqlCommand cmd1 = new MySqlCommand(str1, con);
+                MySqlDataReader dr = cmd1.ExecuteReader();
                 if (dr.Read())
                 {
-                    MessageBox.Show("" + textBox2.Text + "'s Details is Updated Successfully.. ", "Important Message");
-                    textBox2.Text = "";                    
+                    MessageBox.Show("Details of " + textBox2.Text + " updated successfully.");
+                    textBox2.Text = "";
                     textBox4.Text = "";
                     textBox5.Text = "";
                     textBox6.Text = "";
-                    textBox7.Text = "";                 
-                    using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\Sem.4\C# Projects\Trials\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True"))
-                    {
+                    textBox7.Text = "";
 
+                    using (MySqlConnection con1 = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;"))
+                    {
                         string str2 = "SELECT * FROM staff";
-                        SqlCommand cmd2 = new SqlCommand(str2, con1);
-                        SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                        MySqlCommand cmd2 = new MySqlCommand(str2, con1);
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
                         dataGridView1.DataSource = new BindingSource(dt, null);
                     }
                 }
             }
-            catch (SqlException excep)
+            catch (MySqlException excep)
             {
                 MessageBox.Show(excep.Message);
             }
@@ -212,6 +206,5 @@ namespace HospitalManagementSystemCSharp
             textBox7.Text = "";
             textBox1.Text = "";
         }
-
     }
 }

@@ -21,9 +21,80 @@ namespace HospitalManagementSystemCSharp
 
         private void PatientInformation_Load(object sender, EventArgs e)
         {
-            
-            this.patientTableAdapter.Fill(this.hospitalDataSet1.patient);
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            //this.patientTableAdapter.Fill(this.hospitalDataSet1.patient);
+
+            database.openConnection();
+            string str2 = "SELECT * FROM patient";
+            MySqlCommand cmd2 = new MySqlCommand(str2, database.getConnection());
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = new BindingSource(dt, null);
+            database.closeConnection();
+        }
+
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            database.openConnection();
+            string gen = string.Empty;
+            if (radioButton1.Checked)
             {
+                gen = "Male";
+            }
+            else
+            {
+                gen = "Female";
+            }
+            try
+            {
+                string str = "UPDATE patient SET name='" + textBox2.Text + "', gen='" + gen + "', age='" + textBox3.Text + "', date='" + textBox4.Text + "', cont='" + textBox5.Text + "', addr='" + textBox6.Text + "', disease='" + textBox7.Text + "', status='" + textBox8.Text + "', r_type='" + textBox10.Text + "', building='" + textBox9.Text + "', r_no='" + textBox11.Text + "', price='" + textBox12.Text + "' WHERE id='" + textBox1.Text + "'";
+
+                MySqlCommand cmd = new MySqlCommand(str, database.getConnection());
+                cmd.ExecuteNonQuery();
+
+                string str1 = "SELECT max(id) FROM patient;";
+                MySqlCommand cmd1 = new MySqlCommand(str1, database.getConnection());
+                MySqlDataReader dr = cmd1.ExecuteReader();
+                if (dr.Read())
+                {
+                    MessageBox.Show("Информация о пациенте " + textBox2.Text + " успешно обновлена.", "Important Message");
+                    textBox2.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+                    textBox7.Text = "";
+
+                    database.openConnection();
+                    string str2 = "SELECT * FROM patient";
+                    MySqlCommand cmd2 = new MySqlCommand(str2, database.getConnection());
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = new BindingSource(dt, null);
+                    database.closeConnection();
+                }
+            }
+            catch (MySqlException excep)
+            {
+                MessageBox.Show(excep.Message);
+            }
+            database.closeConnection();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            database.openConnection();
+            try
+            {
+                string str = "DELETE FROM patient WHERE id = '" + textBox1.Text + "'";
+
+                MySqlCommand cmd = new MySqlCommand(str, database.getConnection());
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Запись пациента успешно удалена.");
 
                 string str2 = "SELECT * FROM patient";
                 MySqlCommand cmd2 = new MySqlCommand(str2, database.getConnection());
@@ -31,23 +102,37 @@ namespace HospitalManagementSystemCSharp
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = new BindingSource(dt, null);
+
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox7.Text = "";
+                textBox8.Text = "";
+                textBox9.Text = "";
+                textBox10.Text = "";
+                textBox11.Text = "";
             }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show("Пожалуйста, введите идентификатор пациента.");
+            }
+            database.closeConnection();
         }
 
-       /* private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            // SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True");
-
             database.openConnection();
             if (textBox1.Text != "")
             {
                 try
                 {
-                    string getCust = "select name,gen,age,date,cont,addr,disease,status,r_type,building,r_no,price from patient where id=" + Convert.ToInt32(textBox1.Text) + " ;";
+                    string getCust = "SELECT name, gen, age, date, cont, addr, disease, status, r_type, building, r_no, price FROM patient WHERE id=" + Convert.ToInt32(textBox1.Text) + ";";
 
-                    MySqlDataAdapter cmd = new MySqlDataAdapter(getCust, database.getConnection());
-                    MySqlDataReader dr = new MySqlDataReader(getCust,);
-                    dr = 
+                    MySqlCommand cmd = new MySqlCommand(getCust, database.getConnection());
+                    MySqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
                         textBox2.Text = dr.GetValue(0).ToString();
@@ -69,11 +154,10 @@ namespace HospitalManagementSystemCSharp
                         textBox9.Text = dr.GetValue(9).ToString();
                         textBox11.Text = dr.GetValue(10).ToString();
                         textBox12.Text = dr.GetValue(11).ToString();
-                        
                     }
                     else
                     {
-                        MessageBox.Show(" Sorry, This ID, " + textBox1.Text + " Staff is not Available.   ");
+                        MessageBox.Show("Sorry, This ID, " + textBox1.Text + " Staff is not Available.");
                         textBox1.Text = "";
                     }
                 }
@@ -83,101 +167,6 @@ namespace HospitalManagementSystemCSharp
                 }
                 database.closeConnection();
             }
-        }*/
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MySqlConnection con = new MySqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True");
-            database.openConnection();
-            string gen = string.Empty;
-            if (radioButton1.Checked)
-            {
-                gen = "Male";
-            }
-            else
-            {
-                gen = "Female";
-            }
-            try
-            {
-                string str = " Update patient set name='" + textBox2.Text + "',gen='" + gen + "',age='" + textBox3.Text + "',date='" + textBox4.Text + "',cont='" + textBox5.Text + "',addr='" + textBox6.Text + "',disease='" + textBox7.Text + "',status='" + textBox8.Text  + "',r_type='" + textBox10.Text + "',building='" + textBox9.Text + "',r_no='" + textBox11.Text + "',price='" + textBox12.Text + "' where id='" + textBox1.Text + "'";
-
-                MySqlCommand cmd = new MySqlCommand(str, con);
-                cmd.ExecuteNonQuery();
-
-                string str1 = "select max(id) from patient;";
-
-                MySqlCommand cmd1 = new MySqlCommand(str1, con);
-                MySqlDataReader dr = cmd1.ExecuteReader();
-                if (dr.Read())
-                {
-                    MessageBox.Show("Cведения о " + textBox2.Text + " успешно обновлены.. ", "Important Message");
-                    textBox2.Text = "";
-                    textBox4.Text = "";
-                    textBox5.Text = "";
-                    textBox6.Text = "";
-                    textBox7.Text = "";
-                    using (MySqlConnection con1 = new MySqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True"))
-                    {
-
-                        string str2 = "SELECT * FROM patient";
-                        MySqlCommand cmd2 = new MySqlCommand(str2, con1);
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        dataGridView1.DataSource = new BindingSource(dt, null);
-                    }
-                }
-            }
-            catch (MySqlException excep)
-            {
-                MessageBox.Show(excep.Message);
-            }
-            con.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MySqlConnection con = new MySqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True");
-            con.Open();
-            try
-            {
-
-                string str = "DELETE FROM patient WHERE id = '" + textBox1.Text + "'";
-
-                MySqlCommand cmd = new MySqlCommand(str, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show(" Запись пациента успешно удалена ");
-                using (con)
-                {
-
-                    string str2 = "SELECT * FROM patient";
-                    MySqlCommand cmd2 = new MySqlCommand(str2, con);
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    dataGridView1.DataSource = new BindingSource(dt, null);
-                }
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                textBox8.Text = "";
-                textBox9.Text = "";
-                textBox10.Text = "";
-                textBox11.Text = "";
-            }
-
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("Пожалуйста, введите идентификатор пациента.");
-            }
         }
     }
-    
 }

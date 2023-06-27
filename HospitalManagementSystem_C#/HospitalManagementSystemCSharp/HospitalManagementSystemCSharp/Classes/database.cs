@@ -11,6 +11,7 @@ namespace HospitalManagementSystemCSharp
 {
     internal class Database
     {
+
         MySqlConnection connection = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;");
 
         public void openConnection()
@@ -26,6 +27,31 @@ namespace HospitalManagementSystemCSharp
             if (connection.State == System.Data.ConnectionState.Open)
             {
                 connection.Close();
+            }
+        }
+
+        private string connectionString = "server=localhost;user=root;database=test;password=d1k7f2l4;";
+        public void ExecuteNonQuery(string query)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public object ExecuteScalar(string query)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    connection.Open();
+                    return command.ExecuteScalar();
+                }
             }
         }
 

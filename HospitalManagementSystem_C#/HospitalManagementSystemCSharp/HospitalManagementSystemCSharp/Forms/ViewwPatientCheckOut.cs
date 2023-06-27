@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace HospitalManagementSystemCSharp
 {
     public partial class ViewwPatientCheckOut : Form
     {
+        Database database = new Database();
         public ViewwPatientCheckOut()
         {
             InitializeComponent();
@@ -21,13 +23,12 @@ namespace HospitalManagementSystemCSharp
         private void ViewwPatientCheckOut_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'hospitalDataSet3.checkout' table. You can move, or remove it, as needed.
-            this.checkoutTableAdapter.Fill(this.hospitalDataSet3.checkout);
-            using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\bin\Debug\hospital.mdf;Integrated Security=True"))
+           // this.checkoutTableAdapter.Fill(this.hospitalDataSet3.checkout);
+            using (MySqlConnection con1 = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;"))
             {
-
                 string str2 = "SELECT * FROM checkout";
-                SqlCommand cmd2 = new SqlCommand(str2, con1);
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                MySqlCommand cmd2 = new MySqlCommand(str2, con1);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = new BindingSource(dt, null);
@@ -36,16 +37,17 @@ namespace HospitalManagementSystemCSharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\bin\Debug\hospital.mdf;Integrated Security=True"))
+            using (MySqlConnection con1 = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;"))
             {
-
-                string str2 = "SELECT * FROM checkout where id='"+textBox1.Text +"'";
-                SqlCommand cmd2 = new SqlCommand(str2, con1);
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                string str2 = "SELECT * FROM checkout WHERE id='" + textBox1.Text + "'";
+                MySqlCommand cmd2 = new MySqlCommand(str2, con1);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = new BindingSource(dt, null);
             }
         }
     }
+
 }
+

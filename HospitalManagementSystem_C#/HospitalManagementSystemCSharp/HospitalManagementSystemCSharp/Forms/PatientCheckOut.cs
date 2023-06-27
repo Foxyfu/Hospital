@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace HospitalManagementSystemCSharp
 {
     public partial class PatientCheckOut : Form
     {
+        Database database = new Database();
+
         public PatientCheckOut()
         {
             InitializeComponent();
@@ -20,18 +22,15 @@ namespace HospitalManagementSystemCSharp
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True");
-
-            con.Open();
+            database.openConnection();
             if (textBox1.Text != "")
             {
                 try
                 {
-                    string getCust = "select name,gen,age,cont,addr,disease from patient where id=" + Convert.ToInt32(textBox1.Text) + " ;";
+                    string getCust = "SELECT name, gen, age, cont, addr, disease FROM patient WHERE id=" + Convert.ToInt32(textBox1.Text) + ";";
 
-                    SqlCommand cmd = new SqlCommand(getCust, con);
-                    SqlDataReader dr;
-                    dr = cmd.ExecuteReader();
+                    MySqlCommand cmd = new MySqlCommand(getCust, database.getConnection());
+                    MySqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
                         textBox2.Text = dr.GetValue(0).ToString();
@@ -47,26 +46,24 @@ namespace HospitalManagementSystemCSharp
                         textBox5.Text = dr.GetValue(3).ToString();
                         textBox6.Text = dr.GetValue(4).ToString();
                         textBox7.Text = dr.GetValue(5).ToString();
-                        
                     }
                     else
                     {
-                        MessageBox.Show(" Sorry, This ID, " + textBox1.Text + " patient is not Available.   ");
+                        MessageBox.Show("Sorry, This ID, " + textBox1.Text + " patient is not Available.");
                         textBox1.Text = "";
                     }
                 }
-                catch (SqlException excep)
+                catch (MySqlException excep)
                 {
                     MessageBox.Show(excep.Message);
                 }
-                con.Close();
+                database.closeConnection();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Kurs\HospitalManagementSystem_C#\HospitalManagementSystemCSharp\HospitalManagementSystemCSharp\hospital.mdf;Integrated Security=True");
-            con.Open();
+            database.openConnection();
             string gen = string.Empty;
             if (radioButton1.Checked)
             {
@@ -78,20 +75,22 @@ namespace HospitalManagementSystemCSharp
             }
             try
             {
-                string str = "INSERT INTO checkout(name,gen,age,contact,addr,disease,date_in,date_out,build,r_no,r_type,status,med_price,total) VALUES('" + textBox2.Text + "','" + gen + "','" + textBox3.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + textBox8.Text + "','" + textBox9.Text + "','" + textBox10.Text + "','" + textBox11.Text + "','" + textBox12.Text + "','" + textBox14.Text + "','" + textBox13.Text + "','" + textBox15.Text + "'); ";
+                string str = "INSERT INTO checkout(name, gen, age, contact, addr, disease, date_in, date_out, build, r_no, r_type, status, med_price, total) " +
+                             "VALUES('" + textBox2.Text + "','" + gen + "','" + textBox3.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" +
+                             textBox8.Text + "','" + textBox9.Text + "','" + textBox10.Text + "','" + textBox11.Text + "','" + textBox12.Text + "','" + textBox14.Text + "','" +
+                             textBox13.Text + "','" + textBox15.Text + "')";
 
-                SqlCommand cmd = new SqlCommand(str, con);
+                MySqlCommand cmd = new MySqlCommand(str, database.getConnection());
                 cmd.ExecuteNonQuery();
-                string str1 = "select max(Id) from checkout;";
 
-                SqlCommand cmd1 = new SqlCommand(str1, con);
-                SqlDataReader dr = cmd1.ExecuteReader();
+                string str1 = "SELECT max(Id) FROM checkout;";
+                MySqlCommand cmd1 = new MySqlCommand(str1, database.getConnection());
+                MySqlDataReader dr = cmd1.ExecuteReader();
                 if (dr.Read())
                 {
-                    MessageBox.Show("Patient Checkout Information Saved Successfully..");
+                    MessageBox.Show("Patient Checkout Information Saved Successfully.");
                     textBox2.Text = "";
                     textBox3.Text = "";
-                   
                     textBox5.Text = "";
                     textBox6.Text = "";
                     textBox7.Text = "";
@@ -102,21 +101,20 @@ namespace HospitalManagementSystemCSharp
                     textBox12.Text = "";
                     textBox13.Text = "";
                     textBox14.Text = "";
-                    textBox15.Text = "";                    
+                    textBox15.Text = "";
                 }
             }
-            catch (SqlException excep)
+            catch (MySqlException excep)
             {
                 MessageBox.Show(excep.Message);
             }
-            con.Close();
+            database.closeConnection();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             textBox2.Text = "";
             textBox3.Text = "";
-
             textBox5.Text = "";
             textBox6.Text = "";
             textBox7.Text = "";
@@ -129,7 +127,5 @@ namespace HospitalManagementSystemCSharp
             textBox14.Text = "";
             textBox15.Text = "";
         }
-
-        
     }
 }
