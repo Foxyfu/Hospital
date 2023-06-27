@@ -14,6 +14,7 @@ namespace HospitalManagementSystemCSharp
 {
     public partial class Register : Form
     {
+        //ghbdtn
         Database dataBase = new Database();
         public Register()
         {
