@@ -86,5 +86,10 @@ namespace HospitalManagementSystemCSharp
             textBox_login.MaxLength = 50;
             textBox_password.MaxLength = 50;
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

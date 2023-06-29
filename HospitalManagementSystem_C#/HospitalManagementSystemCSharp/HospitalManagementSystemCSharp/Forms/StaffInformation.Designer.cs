@@ -50,8 +50,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hospitalDataSet = new HospitalManagementSystemCSharp.hospitalDataSet();
-            this.staffTableAdapter = new HospitalManagementSystemCSharp.hospitalDataSetTableAdapters.staffTableAdapter();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -292,16 +289,7 @@
             // staffBindingSource
             // 
             this.staffBindingSource.DataMember = "staff";
-            this.staffBindingSource.DataSource = this.hospitalDataSet;
-            // 
-            // hospitalDataSet
-            // 
-            this.hospitalDataSet.DataSetName = "hospitalDataSet";
-            this.hospitalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // staffTableAdapter
-            // 
-            this.staffTableAdapter.ClearBeforeFill = true;
+           
             // 
             // radioButton2
             // 
@@ -423,7 +411,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,9 +438,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private hospitalDataSet hospitalDataSet;
         private System.Windows.Forms.BindingSource staffBindingSource;
-        private hospitalDataSetTableAdapters.staffTableAdapter staffTableAdapter;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;

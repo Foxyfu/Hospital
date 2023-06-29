@@ -103,16 +103,6 @@ namespace HospitalManagementSystemCSharp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hms {
-            get {
-                object obj = ResourceManager.GetObject("hms", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap hms2 {
             get {
                 object obj = ResourceManager.GetObject("hms2", resourceCulture);
@@ -126,6 +116,16 @@ namespace HospitalManagementSystemCSharp.Properties {
         internal static System.Drawing.Bitmap images__staff_ {
             get {
                 object obj = ResourceManager.GetObject("images (staff)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo1 {
+            get {
+                object obj = ResourceManager.GetObject("logo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

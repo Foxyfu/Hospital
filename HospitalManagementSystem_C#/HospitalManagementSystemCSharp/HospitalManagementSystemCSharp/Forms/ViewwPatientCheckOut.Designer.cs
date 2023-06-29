@@ -36,8 +36,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.checkoutBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hospitalDataSet3 = new HospitalManagementSystemCSharp.hospitalDataSet3();
-            this.checkoutTableAdapter = new HospitalManagementSystemCSharp.hospitalDataSet3TableAdapters.checkoutTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkoutBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -145,16 +142,7 @@
             // checkoutBindingSource
             // 
             this.checkoutBindingSource.DataMember = "checkout";
-            this.checkoutBindingSource.DataSource = this.hospitalDataSet3;
-            // 
-            // hospitalDataSet3
-            // 
-            this.hospitalDataSet3.DataSetName = "hospitalDataSet3";
-            this.hospitalDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // checkoutTableAdapter
-            // 
-            this.checkoutTableAdapter.ClearBeforeFill = true;
+            
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -298,7 +286,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkoutBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,9 +299,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private hospitalDataSet3 hospitalDataSet3;
         private System.Windows.Forms.BindingSource checkoutBindingSource;
-        private hospitalDataSet3TableAdapters.checkoutTableAdapter checkoutTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genDataGridViewTextBoxColumn;

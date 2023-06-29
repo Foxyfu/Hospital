@@ -98,5 +98,12 @@ namespace HospitalManagementSystemCSharp
             textBox1.Text = "";
             textBox2.Text = "";
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            login login = new login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

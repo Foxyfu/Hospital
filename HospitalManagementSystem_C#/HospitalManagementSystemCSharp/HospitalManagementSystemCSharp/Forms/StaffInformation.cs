@@ -23,20 +23,17 @@ namespace HospitalManagementSystemCSharp
         {
             // TODO: This line of code loads data into the 'hospitalDataSet.staff' table. You can move, or remove it, as needed.
             //this.staffTableAdapter.Fill(this.hospitalDataSet.staff);
-            using (MySqlConnection con1 = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;"))
-            {
-                string str2 = "SELECT * FROM staff";
-                MySqlCommand cmd2 = new MySqlCommand(str2, con1);
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = new BindingSource(dt, null);
-            }
 
-            MySqlConnection con = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;");
-            con.Open();
+            string str2 = "SELECT * FROM staff";
+            MySqlCommand cmd2 = new MySqlCommand(str2, database.getConnection());
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = new BindingSource(dt, null);
+
+            database.openConnection();
             string str1 = "SELECT max(id) FROM staff;";
-            MySqlCommand cmd1 = new MySqlCommand(str1, con);
+            MySqlCommand cmd1 = new MySqlCommand(str1, database.getConnection());
             MySqlDataReader dr = cmd1.ExecuteReader();
             if (dr.Read())
             {
@@ -53,7 +50,7 @@ namespace HospitalManagementSystemCSharp
                     textBox1.Text = a.ToString();
                 }
             }
-            con.Close();
+            database.closeConnection();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -87,15 +84,12 @@ namespace HospitalManagementSystemCSharp
                     textBox6.Text = "";
                     textBox7.Text = "";
 
-                    using (MySqlConnection con1 = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;"))
-                    {
-                        string str2 = "SELECT * FROM staff";
-                        MySqlCommand cmd2 = new MySqlCommand(str2, con1);
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        dataGridView1.DataSource = new BindingSource(dt, null);
-                    }
+                    string str2 = "SELECT * FROM staff";
+                    MySqlCommand cmd2 = new MySqlCommand(str2, database.getConnection());
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = new BindingSource(dt, null);
                 }
             }
             catch (MySqlException excep)
@@ -149,8 +143,7 @@ namespace HospitalManagementSystemCSharp
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;");
-            con.Open();
+            database.openConnection();
             string gen = string.Empty;
             if (radioButton1.Checked)
             {
@@ -164,11 +157,11 @@ namespace HospitalManagementSystemCSharp
             {
                 string str = "UPDATE staff SET name='" + textBox2.Text + "',gender='" + gen + "',position='" + textBox4.Text + "',salary='" + textBox5.Text + "',contact='" + textBox6.Text + "',address='" + textBox7.Text + "' WHERE id='" + textBox1.Text + "'";
 
-                MySqlCommand cmd = new MySqlCommand(str, con);
+                MySqlCommand cmd = new MySqlCommand(str, database.getConnection());
                 cmd.ExecuteNonQuery();
 
                 string str1 = "SELECT max(id) FROM staff;";
-                MySqlCommand cmd1 = new MySqlCommand(str1, con);
+                MySqlCommand cmd1 = new MySqlCommand(str1, database.getConnection());
                 MySqlDataReader dr = cmd1.ExecuteReader();
                 if (dr.Read())
                 {
@@ -182,7 +175,7 @@ namespace HospitalManagementSystemCSharp
                     using (MySqlConnection con1 = new MySqlConnection("server=localhost;user=root;database=test;password=d1k7f2l4;"))
                     {
                         string str2 = "SELECT * FROM staff";
-                        MySqlCommand cmd2 = new MySqlCommand(str2, con1);
+                        MySqlCommand cmd2 = new MySqlCommand(str2, database.getConnection());
                         MySqlDataAdapter da = new MySqlDataAdapter(cmd2);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
@@ -194,7 +187,7 @@ namespace HospitalManagementSystemCSharp
             {
                 MessageBox.Show(excep.Message);
             }
-            con.Close();
+            database.closeConnection();
         }
 
         private void button3_Click(object sender, EventArgs e)

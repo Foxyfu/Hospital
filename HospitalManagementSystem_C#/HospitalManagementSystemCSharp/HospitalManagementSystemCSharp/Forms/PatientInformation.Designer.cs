@@ -76,12 +76,9 @@
             this.rnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hospitalDataSet1 = new HospitalManagementSystemCSharp.hospitalDataSet1();
-            this.patientTableAdapter = new HospitalManagementSystemCSharp.hospitalDataSet1TableAdapters.patientTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -553,17 +550,7 @@
             // patientBindingSource
             // 
             this.patientBindingSource.DataMember = "patient";
-            this.patientBindingSource.DataSource = this.hospitalDataSet1;
-            // 
-            // hospitalDataSet1
-            // 
-            this.hospitalDataSet1.DataSetName = "hospitalDataSet1";
-            this.hospitalDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patientTableAdapter
-            // 
-            this.patientTableAdapter.ClearBeforeFill = true;
-            // 
+          
             // PatientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -612,7 +599,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -653,9 +639,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private hospitalDataSet1 hospitalDataSet1;
         private System.Windows.Forms.BindingSource patientBindingSource;
-        private hospitalDataSet1TableAdapters.patientTableAdapter patientTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genDataGridViewTextBoxColumn;
