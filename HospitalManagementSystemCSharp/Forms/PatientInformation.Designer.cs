@@ -62,11 +62,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cont = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disease = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.r_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.building = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.r_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -398,6 +411,20 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.name,
+            this.gen,
+            this.age,
+            this.date,
+            this.cont,
+            this.addr,
+            this.disease,
+            this.status,
+            this.r_type,
+            this.building,
+            this.r_no,
+            this.price});
             this.dataGridView1.DataSource = this.patientBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 650);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -405,10 +432,6 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(789, 225);
             this.dataGridView1.TabIndex = 139;
-            // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataMember = "patient";
             // 
             // pictureBox1
             // 
@@ -420,6 +443,114 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 163;
             this.pictureBox1.TabStop = false;
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataMember = "patient";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.MaxInputLength = 45;
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Width = 125;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "имя";
+            this.name.MaxInputLength = 45;
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.Width = 125;
+            // 
+            // gen
+            // 
+            this.gen.HeaderText = "пол";
+            this.gen.MaxInputLength = 45;
+            this.gen.MinimumWidth = 6;
+            this.gen.Name = "gen";
+            this.gen.Width = 125;
+            // 
+            // age
+            // 
+            this.age.HeaderText = "возраст";
+            this.age.MaxInputLength = 45;
+            this.age.MinimumWidth = 6;
+            this.age.Name = "age";
+            this.age.Width = 125;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "дата";
+            this.date.MaxInputLength = 45;
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.Width = 125;
+            // 
+            // cont
+            // 
+            this.cont.HeaderText = "телефон";
+            this.cont.MaxInputLength = 45;
+            this.cont.MinimumWidth = 6;
+            this.cont.Name = "cont";
+            this.cont.Width = 125;
+            // 
+            // addr
+            // 
+            this.addr.HeaderText = "адрес";
+            this.addr.MaxInputLength = 45;
+            this.addr.MinimumWidth = 6;
+            this.addr.Name = "addr";
+            this.addr.Width = 125;
+            // 
+            // disease
+            // 
+            this.disease.HeaderText = "болезнь";
+            this.disease.MaxInputLength = 45;
+            this.disease.MinimumWidth = 6;
+            this.disease.Name = "disease";
+            this.disease.Width = 125;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "статус";
+            this.status.MaxInputLength = 45;
+            this.status.MinimumWidth = 6;
+            this.status.Name = "status";
+            this.status.Width = 125;
+            // 
+            // r_type
+            // 
+            this.r_type.HeaderText = "Тип комнаты";
+            this.r_type.MaxInputLength = 45;
+            this.r_type.MinimumWidth = 6;
+            this.r_type.Name = "r_type";
+            this.r_type.Width = 125;
+            // 
+            // building
+            // 
+            this.building.HeaderText = "здание";
+            this.building.MaxInputLength = 45;
+            this.building.MinimumWidth = 6;
+            this.building.Name = "building";
+            this.building.Width = 125;
+            // 
+            // r_no
+            // 
+            this.r_no.HeaderText = "номер комнаты";
+            this.r_no.MaxInputLength = 45;
+            this.r_no.MinimumWidth = 6;
+            this.r_no.Name = "r_no";
+            this.r_no.Width = 125;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "цена";
+            this.price.MaxInputLength = 45;
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.Width = 125;
             // 
             // PatientInformation
             // 
@@ -467,8 +598,8 @@
             this.Text = "Информация Пациента";
             this.Load += new System.EventHandler(this.PatientInformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,5 +654,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cont;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn disease;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn r_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn building;
+        private System.Windows.Forms.DataGridViewTextBoxColumn r_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
 }
