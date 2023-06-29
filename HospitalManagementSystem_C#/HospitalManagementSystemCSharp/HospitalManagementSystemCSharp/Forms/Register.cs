@@ -47,6 +47,20 @@ namespace HospitalManagementSystemCSharp
             }
         }
 
+        private bool CheckUserExists(string login)
+        {
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            string querystring = $"SELECT id FROM register WHERE login = '{login}'";
+
+            MySqlCommand command = new MySqlCommand(querystring, dataBase.getConnection());
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return (table.Rows.Count > 0);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             var login = textBox1.Text;
@@ -62,7 +76,21 @@ namespace HospitalManagementSystemCSharp
 
             dataBase.openConnection();
 
-            if(cmd.ExecuteNonQuery() == 1)
+            // Проверка на пустой логин или пароль
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Введите логин и пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Проверка наличия пользователя с таким аккаунтом
+            if (CheckUserExists(login))
+            {
+                MessageBox.Show("Нельзя зарегистрироваться, пользователь уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cmd.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Аккаунт успешно создан!", "Успех");
                 login form = new login();
