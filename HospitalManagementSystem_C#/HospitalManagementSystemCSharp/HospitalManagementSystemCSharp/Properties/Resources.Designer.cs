@@ -73,6 +73,36 @@ namespace HospitalManagementSystemCSharp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1674613473_top_fon_com_p_prezentatsiya_dlya_medikov_fon_6 {
+            get {
+                object obj = ResourceManager.GetObject("1674613473_top-fon-com-p-prezentatsiya-dlya-medikov-fon-6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1jpg_transformed {
+            get {
+                object obj = ResourceManager.GetObject("1jpg-transformed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1jpg_transformed__1_ {
+            get {
+                object obj = ResourceManager.GetObject("1jpg-transformed (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap castio {
             get {
                 object obj = ResourceManager.GetObject("castio", resourceCulture);
@@ -103,6 +133,26 @@ namespace HospitalManagementSystemCSharp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap health_chart_patient_chart_report_icon_143438__1_ {
+            get {
+                object obj = ResourceManager.GetObject("health_chart_patient_chart_report_icon_143438 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Help_43559 {
+            get {
+                object obj = ResourceManager.GetObject("Help_43559", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hms2 {
             get {
                 object obj = ResourceManager.GetObject("hms2", resourceCulture);
@@ -123,6 +173,16 @@ namespace HospitalManagementSystemCSharp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo1 {
             get {
                 object obj = ResourceManager.GetObject("logo1", resourceCulture);
@@ -133,9 +193,39 @@ namespace HospitalManagementSystemCSharp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap medical_illness_healthcare_sickness_pacient_temperature_icon_144695__1_ {
+            get {
+                object obj = ResourceManager.GetObject("medical_illness_healthcare_sickness_pacient_temperature_icon_144695 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medical_medicine_doctor_hospital_icon_143393 {
+            get {
+                object obj = ResourceManager.GetObject("medical_medicine_doctor_hospital_icon_143393", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap patient_cards_2_512 {
             get {
                 object obj = ResourceManager.GetObject("patient_cards-2-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment_icon_194171 {
+            get {
+                object obj = ResourceManager.GetObject("payment_icon_194171", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

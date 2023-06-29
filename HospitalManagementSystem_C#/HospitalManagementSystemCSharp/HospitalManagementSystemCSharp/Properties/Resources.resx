@@ -118,28 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="08-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\08-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="patient_cards-2-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\patient_cards-2-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="form-icon-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\form-icon-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="patient_cards-2-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\patient_cards-2-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1674613473_top-fon-com-p-prezentatsiya-dlya-medikov-fon-6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1674613473_top-fon-com-p-prezentatsiya-dlya-medikov-fon-6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chob" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Help_43559" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help_43559.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hms2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hms2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="castio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\castio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="08-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\08-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medical_illness_healthcare_sickness_pacient_temperature_icon_144695 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medical_illness_healthcare_sickness_pacient_temperature_icon_144695 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="images (staff)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (staff).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chob" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chob.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1jpg-transformed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1jpg-transformed.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_chart_patient_chart_report_icon_143438 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\health_chart_patient_chart_report_icon_143438 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="payment_icon_194171" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\payment_icon_194171.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="castio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\castio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medical_medicine_doctor_hospital_icon_143393" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medical_medicine_doctor_hospital_icon_143393.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1jpg-transformed (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1jpg-transformed (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
