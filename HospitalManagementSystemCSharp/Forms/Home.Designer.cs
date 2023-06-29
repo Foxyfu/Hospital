@@ -57,11 +57,12 @@
             this.roomInfoToolStripMenuItem,
             this.addStaffToolStripMenuItem,
             this.viewCheckoutToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 60);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 52);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1531, 606);
+            this.menuStrip1.Size = new System.Drawing.Size(1422, 781);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // patientRegistrationToolStripMenuItem
             // 
@@ -69,7 +70,7 @@
             this.patientRegistrationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("patientRegistrationToolStripMenuItem.Image")));
             this.patientRegistrationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.patientRegistrationToolStripMenuItem.Name = "patientRegistrationToolStripMenuItem";
-            this.patientRegistrationToolStripMenuItem.Size = new System.Drawing.Size(263, 602);
+            this.patientRegistrationToolStripMenuItem.Size = new System.Drawing.Size(263, 777);
             this.patientRegistrationToolStripMenuItem.Text = "Регистрация пациентов";
             this.patientRegistrationToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.patientRegistrationToolStripMenuItem.Click += new System.EventHandler(this.patientRegistrationToolStripMenuItem_Click);
@@ -80,7 +81,7 @@
             this.patientInformationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("patientInformationToolStripMenuItem.Image")));
             this.patientInformationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.patientInformationToolStripMenuItem.Name = "patientInformationToolStripMenuItem";
-            this.patientInformationToolStripMenuItem.Size = new System.Drawing.Size(254, 602);
+            this.patientInformationToolStripMenuItem.Size = new System.Drawing.Size(254, 777);
             this.patientInformationToolStripMenuItem.Text = "Информация  пациента";
             this.patientInformationToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.patientInformationToolStripMenuItem.Click += new System.EventHandler(this.patientInformationToolStripMenuItem_Click);
@@ -91,7 +92,7 @@
             this.checkoutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("checkoutToolStripMenuItem.Image")));
             this.checkoutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.checkoutToolStripMenuItem.Name = "checkoutToolStripMenuItem";
-            this.checkoutToolStripMenuItem.Size = new System.Drawing.Size(142, 602);
+            this.checkoutToolStripMenuItem.Size = new System.Drawing.Size(142, 777);
             this.checkoutToolStripMenuItem.Text = "Выписка";
             this.checkoutToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.checkoutToolStripMenuItem.Click += new System.EventHandler(this.checkoutToolStripMenuItem_Click);
@@ -102,7 +103,7 @@
             this.roomInfoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("roomInfoToolStripMenuItem.Image")));
             this.roomInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.roomInfoToolStripMenuItem.Name = "roomInfoToolStripMenuItem";
-            this.roomInfoToolStripMenuItem.Size = new System.Drawing.Size(247, 602);
+            this.roomInfoToolStripMenuItem.Size = new System.Drawing.Size(247, 777);
             this.roomInfoToolStripMenuItem.Text = "Информация о номере";
             this.roomInfoToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.roomInfoToolStripMenuItem.Click += new System.EventHandler(this.roomInfoToolStripMenuItem_Click);
@@ -113,7 +114,7 @@
             this.addStaffToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addStaffToolStripMenuItem.Image")));
             this.addStaffToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addStaffToolStripMenuItem.Name = "addStaffToolStripMenuItem";
-            this.addStaffToolStripMenuItem.Size = new System.Drawing.Size(220, 602);
+            this.addStaffToolStripMenuItem.Size = new System.Drawing.Size(220, 777);
             this.addStaffToolStripMenuItem.Text = "Добавить персонал";
             this.addStaffToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.addStaffToolStripMenuItem.Click += new System.EventHandler(this.addStaffToolStripMenuItem_Click);
@@ -124,7 +125,7 @@
             this.viewCheckoutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewCheckoutToolStripMenuItem.Image")));
             this.viewCheckoutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.viewCheckoutToolStripMenuItem.Name = "viewCheckoutToolStripMenuItem";
-            this.viewCheckoutToolStripMenuItem.Size = new System.Drawing.Size(340, 602);
+            this.viewCheckoutToolStripMenuItem.Size = new System.Drawing.Size(340, 777);
             this.viewCheckoutToolStripMenuItem.Text = "Просмотр оформления Лечения";
             this.viewCheckoutToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.viewCheckoutToolStripMenuItem.Click += new System.EventHandler(this.viewCheckoutToolStripMenuItem_Click);
@@ -133,9 +134,9 @@
             // 
             this.menuStrip2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip2.BackgroundImage")));
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Location = new System.Drawing.Point(0, 30);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 28);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1531, 30);
+            this.menuStrip2.Size = new System.Drawing.Size(1422, 24);
             this.menuStrip2.TabIndex = 167;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -148,21 +149,21 @@
             this.closeApplicationToolStripMenuItem});
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(1531, 30);
+            this.menuStrip3.Size = new System.Drawing.Size(1422, 28);
             this.menuStrip3.TabIndex = 168;
             this.menuStrip3.Text = "menuStrip3";
             // 
             // aboutDeveloperToolStripMenuItem
             // 
             this.aboutDeveloperToolStripMenuItem.Name = "aboutDeveloperToolStripMenuItem";
-            this.aboutDeveloperToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
+            this.aboutDeveloperToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
             this.aboutDeveloperToolStripMenuItem.Text = "О разработчике";
             this.aboutDeveloperToolStripMenuItem.Click += new System.EventHandler(this.aboutDeveloperToolStripMenuItem_Click);
             // 
             // closeApplicationToolStripMenuItem
             // 
             this.closeApplicationToolStripMenuItem.Name = "closeApplicationToolStripMenuItem";
-            this.closeApplicationToolStripMenuItem.Size = new System.Drawing.Size(80, 26);
+            this.closeApplicationToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.closeApplicationToolStripMenuItem.Text = "Закрыть";
             this.closeApplicationToolStripMenuItem.Click += new System.EventHandler(this.closeApplicationToolStripMenuItem_Click);
             // 
@@ -170,7 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1531, 666);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1422, 833);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip3);
@@ -181,7 +183,7 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Home_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.menuStrip3.ResumeLayout(false);

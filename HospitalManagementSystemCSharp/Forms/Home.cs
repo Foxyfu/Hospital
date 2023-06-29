@@ -63,5 +63,14 @@ namespace HospitalManagementSystemCSharp
             System.Windows.Forms.Application.Exit();
         }
 
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
