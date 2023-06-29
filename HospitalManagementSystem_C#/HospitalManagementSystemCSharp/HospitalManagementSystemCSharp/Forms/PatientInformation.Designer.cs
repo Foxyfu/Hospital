@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientInformation));
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -60,25 +61,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diseaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rtypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buildingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -406,35 +394,10 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HospitalManagementSystemCSharp.Properties.Resources.hms2;
-            this.pictureBox1.Location = new System.Drawing.Point(647, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 110;
-            this.pictureBox1.TabStop = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.genDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.contDataGridViewTextBoxColumn,
-            this.addrDataGridViewTextBoxColumn,
-            this.diseaseDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.rtypeDataGridViewTextBoxColumn,
-            this.buildingDataGridViewTextBoxColumn,
-            this.rnoDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.patientBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 650);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -443,119 +406,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(789, 225);
             this.dataGridView1.TabIndex = 139;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // genDataGridViewTextBoxColumn
-            // 
-            this.genDataGridViewTextBoxColumn.DataPropertyName = "gen";
-            this.genDataGridViewTextBoxColumn.HeaderText = "Пол";
-            this.genDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.genDataGridViewTextBoxColumn.Name = "genDataGridViewTextBoxColumn";
-            this.genDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Возраст";
-            this.ageDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            this.ageDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // contDataGridViewTextBoxColumn
-            // 
-            this.contDataGridViewTextBoxColumn.DataPropertyName = "cont";
-            this.contDataGridViewTextBoxColumn.HeaderText = "Номер т.";
-            this.contDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contDataGridViewTextBoxColumn.Name = "contDataGridViewTextBoxColumn";
-            this.contDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // addrDataGridViewTextBoxColumn
-            // 
-            this.addrDataGridViewTextBoxColumn.DataPropertyName = "addr";
-            this.addrDataGridViewTextBoxColumn.HeaderText = "Адрес";
-            this.addrDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.addrDataGridViewTextBoxColumn.Name = "addrDataGridViewTextBoxColumn";
-            this.addrDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // diseaseDataGridViewTextBoxColumn
-            // 
-            this.diseaseDataGridViewTextBoxColumn.DataPropertyName = "disease";
-            this.diseaseDataGridViewTextBoxColumn.HeaderText = "Болезнь";
-            this.diseaseDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.diseaseDataGridViewTextBoxColumn.Name = "diseaseDataGridViewTextBoxColumn";
-            this.diseaseDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Статус";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // rtypeDataGridViewTextBoxColumn
-            // 
-            this.rtypeDataGridViewTextBoxColumn.DataPropertyName = "r_type";
-            this.rtypeDataGridViewTextBoxColumn.HeaderText = "Тип комнаты";
-            this.rtypeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rtypeDataGridViewTextBoxColumn.Name = "rtypeDataGridViewTextBoxColumn";
-            this.rtypeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // buildingDataGridViewTextBoxColumn
-            // 
-            this.buildingDataGridViewTextBoxColumn.DataPropertyName = "building";
-            this.buildingDataGridViewTextBoxColumn.HeaderText = "Здание";
-            this.buildingDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.buildingDataGridViewTextBoxColumn.Name = "buildingDataGridViewTextBoxColumn";
-            this.buildingDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // rnoDataGridViewTextBoxColumn
-            // 
-            this.rnoDataGridViewTextBoxColumn.DataPropertyName = "r_no";
-            this.rnoDataGridViewTextBoxColumn.HeaderText = "№ комнаты";
-            this.rnoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rnoDataGridViewTextBoxColumn.Name = "rnoDataGridViewTextBoxColumn";
-            this.rnoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 125;
-            // 
             // patientBindingSource
             // 
             this.patientBindingSource.DataMember = "patient";
-          
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(567, 13);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(134, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 163;
+            this.pictureBox1.TabStop = false;
+            // 
             // PatientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 890);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -585,7 +456,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -596,9 +466,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация Пациента";
             this.Load += new System.EventHandler(this.PatientInformation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,7 +503,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
@@ -653,5 +522,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn buildingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
