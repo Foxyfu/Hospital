@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace HospitalManagementSystemCSharp
 {
@@ -21,7 +22,22 @@ namespace HospitalManagementSystemCSharp
             StartPosition = FormStartPosition.CenterScreen;
         }
 
-        
+         private string GetHashedPassword(string password)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // Преобразование пароля в байтовый массив
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                // Преобразование байтового массива в строку
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2")); // Преобразование в шестнадцатеричное представление
+                }
+                return builder.ToString();
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -32,7 +48,9 @@ namespace HospitalManagementSystemCSharp
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
 
-            string querystring = $"Select login, password from register where login = '{loginUser}' and password = '{passUser}' ";
+            string hashedPassword = GetHashedPassword(passUser);
+            string querystring = $"SELECT login, password FROM register WHERE login = '{loginUser}' AND password = '{hashedPassword}'";
+
 
             MySqlCommand comand = new MySqlCommand(querystring,database.getConnection());
 
