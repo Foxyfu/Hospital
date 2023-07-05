@@ -49,7 +49,7 @@ namespace HospitalManagementSystemCSharp
                     }
                     else
                     {
-                        MessageBox.Show("Sorry, This ID, " + textBox1.Text + " patient is not Available.");
+                        MessageBox.Show("Ip = , " + textBox1.Text + " не найден.");
                         textBox1.Text = "";
                     }
                 }
@@ -88,7 +88,7 @@ namespace HospitalManagementSystemCSharp
                 MySqlDataReader dr = cmd1.ExecuteReader();
                 if (dr.Read())
                 {
-                    MessageBox.Show("Patient Checkout Information Saved Successfully.");
+                    MessageBox.Show("Ифнормация о пациенте сохранена.");
                     textBox2.Text = "";
                     textBox3.Text = "";
                     textBox5.Text = "";
