@@ -157,7 +157,7 @@ namespace HospitalManagementSystemCSharp
                     }
                     else
                     {
-                        MessageBox.Show("Sorry, This ID, " + textBox1.Text + " Staff is not Available.");
+                        MessageBox.Show("Этот, " + textBox1.Text + " не найден.");
                         textBox1.Text = "";
                     }
                 }
